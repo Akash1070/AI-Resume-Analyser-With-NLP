@@ -4,6 +4,8 @@
 
 • Please do ⭐ the repository, if it helped you in anyway.
 
+## Preview
+![Click HERE To View](https://github.com/Akash1070/AI-Resume-Analyser-With-NLP/blob/main/Screenshot.png)
 
 ## Authors
 
