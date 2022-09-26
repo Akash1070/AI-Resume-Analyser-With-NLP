@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>House Price Forcast</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+<!--    <style>-->
+<!--body {-->
+<!--  background-image: url("https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1305&q=80");-->
+<!--  background-position: 200%;-->
+<!--  background-size: cover;-->
+<!--}-->
+<!--</style>-->
+
+
+</head>
+
+<body style="background: #136962;">
+ <div class="login">
+	<h1>Sales Forecasting</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="sqrt_lot" placeholder="area size" required="required" />
+        <input type="text" name="sqft_living15" placeholder="size of living space" required="required" />
+        <input type="text" name="age" placeholder="age of property" required="required" />
+		<input type="text" name="zipcode" placeholder="zipcode" required="required" />
+        <input type="text" name="bathrooms" placeholder="no. of bathrooms" required="required" />
+        <input type="text" name="bedrooms" placeholder="no. of bedrooms" required="required" />
+        <input type="text" name="renov_age" placeholder="total yrs of renovation" required="required" />
+        <input type="text" name="sqft_basement" placeholder="size of basement" required="required" />
+        <input type="text" name="grade" placeholder="overall house grade" required="required" />
+
+
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Forecast Sales</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
